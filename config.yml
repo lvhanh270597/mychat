@@ -1,0 +1,16 @@
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: en
+pipeline: 
+- name: "lib.preprocessor.Preprocessor"
+- name: "lib.tokenizer.Tokenizer"
+- name: "lib.extractor.Extractor"
+- name: "lib.vectorizer.Vectorizer"
+- name: "lib.intent_classifier.IntentClassifier"
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+policies:
+  - name: MemoizationPolicy
+  - name: KerasPolicy
+  - name: MappingPolicy
